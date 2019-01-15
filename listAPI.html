@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <title>Bank</title>
+    <style>
+        li {
+            list-style-type: none;
+        }
+p{
+    margin: 2px auto;
+}
+    </style>
+</head>
+<div class="container ml-5 mt-3">
+    <h3> List of APIs for LightBank project</h3>
+
+<h4 class = "border-bottom">Get all accounts: <span class="text-primary">GET  /accounts</span></h4>
+<p >Return list of all accounts in system</p>
+<p class ="font-weight-bold">Response on success:</p>
+<p>Status: 200</p>
+<p>JSON:</p>
+<ol>
+    <li>[{</li>
+    <li>number: string,</li>
+    <li>owner: string,</li>
+    <li>sum: number</li>
+    <li>     }, ….]   </li>
+</ol>
+<p class ="font-weight-bold">Response on error:</p>
+<p> Status: 404</p>
+<hr>
+
+<h4 class = "border-bottom">Get account: <span class="text-primary">GET  /account/{accNumber}</span></h4>
+<p>Return all data for account number {accNumber}</p>
+<p class ="font-weight-bold">Response on success:</p>
+<p>Status: 200</p>
+<p>JSON:</p>
+<ol>
+    <li>{</li>
+    <li>number: string,</li>
+    <li>owner: string,</li>
+    <li>sum: number</li>
+    <li>     }   </li>
+</ol>
+<p class ="font-weight-bold">Response on error:</p>
+<p> Status: 400</p>
+<p>String: Error message</p>
+<hr>
+
+<h4 class = "border-bottom">Add new account: <span class="text-primary">POST  /account</span></h4>
+<p>Create new account with owner’s data from request’s body</p>
+<p class ="font-weight-bold">Request body:</p>
+<ol>
+    <li>{</li>
+    <li>name: string</li>
+    <li>     }   </li>
+</ol>
+<p class ="font-weight-bold">Response on success:</p>
+<p>Status: 201</p>
+<p>String: Message</p>
+<p class ="font-weight-bold">Response on error:</p>
+<p> Status: 404</p>
+<p>String: Error message</p>
+<hr>
+
+<h4 class = "border-bottom">Transfer money: <span class="text-primary">PUT  /transfer</span></h4>
+<p>Transfer money from 1 account to another</p>
+<p class ="font-weight-bold">Request body:</p>
+<p>JSON:</p>
+<ol>
+    <li>{</li>
+    <li>accountFrom: string,</li>
+    <li>accountTo: string,</li>
+    <li>sum: number</li>
+    <li>     }   </li>
+</ol>
+<p class ="font-weight-bold">Response on success:</p>
+<p>Status: 200</p>
+<p>String: "Transfer done successful"</p>
+<p class ="font-weight-bold">Response on error:</p>
+<p> Status: 400</p>
+<p>String: Error message</p>
+<hr>
+
+<h4 class = "border-bottom">Deposit: <span class="text-primary">PUT  /deposit</span></h4>
+<p> Add “sum” of money to account number “accountTo”</p>
+<p class ="font-weight-bold">Request body:</p>
+<p>JSON:</p>
+<ol>
+    <li>{</li>
+    <li>accountFrom: "",</li>
+    <li>accountTo: string,</li>
+    <li>sum: number</li>
+    <li>     }   </li>
+</ol>
+<p class ="font-weight-bold">Response on success:</p>
+<p>Status: 200</p>
+<p>String: Message</p>
+<p class ="font-weight-bold">Response on error:</p>
+<p> Status: 400</p>
+<p>String: Error message</p>
+<hr>
+
+<h4 class = "border-bottom">Withdraw: <span class="text-primary">PUT  /withdraw</span></h4>
+<p>Remove “sum” of money from account number “accountFom”</p>
+<p class ="font-weight-bold">Request body:</p>
+<p>JSON:</p>
+<ol>
+    <li>{</li>
+    <li>accountFrom: string,</li>
+    <li>accountTo: "",</li>
+    <li>sum: number</li>
+    <li>     }   </li>
+</ol>
+<p class ="font-weight-bold">Response on success:</p>
+<p>Status: 200</p>
+<p>String: Message</p>
+<p class ="font-weight-bold">Response on error:</p>
+<p> Status: 400</p>
+<p>String: Error message</p>
+<hr>
+</div>
+
+</body>
+</html>

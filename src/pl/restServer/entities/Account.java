@@ -1,4 +1,4 @@
-package pl.restServer;
+package pl.restServer.entities;
 
 public class Account {
 	private long number;

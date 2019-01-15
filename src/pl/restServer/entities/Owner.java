@@ -1,4 +1,4 @@
-package pl.restServer;
+package pl.restServer.entities;
 
 public class Owner {
 	private String name;

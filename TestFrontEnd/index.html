@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bank</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+
+
+<div class="container position-relative  mt-5 border border-dark p-2 ">
+    <a href = "../listAPI.html">Find API list here</a>
+    <h3 class="text-white bg-dark text-center pt-1 pb-1">My bank</h3>
+    <div class="border-dark p-1">
+        <h5>List of accounts</h5>
+        <ul id="accountsList" class = "ml-5">
+        </ul>
+    </div>
+    <div class="wrapper">
+    <section class = "bg-secondary border mb-3">
+        <h5 class = "ml-4 mt-1 text-white">Money Transfer</h5>
+        <form class = "m-1" action="#" >
+            <div class="form-group b-1 container">
+                <div class="row">
+                    <div class="col-4">
+                        <button type="button" class="btn btn-success" id="btnFromAccount">Select Source Account</button>
+                        <input class="w-75 mt-1 form-control" type="text" name="donorAccount" placeholder="account" id="donorAccount">
+                    </div>
+                    <div class="col-4 ">
+                        <button type="button" class="btn btn-success " id="btnToAccount">Select Destination Account
+                        </button>
+                        <input class="w-75 mt-1 form-control" type="text" name="recipientAccount" placeholder="account"
+                               id="recipientAccount">
+                    </div>
+                    <div class="col-4">
+                        <button type="button" class="btn btn-success none">Sum To Transfer</button>
+                        <input class="w-75 mt-1 form-control" type="text" name="sum" id="sumToTransfer">
+                    </div>
+                </div>
+            </div>
+           <button class = "btn btn-danger ml-3 mb-1" type="button" id="onSubmitTransfer" >Transfer</button>
+        </form>
+        <span id="transferMessage" class = "text-white ml-4 ">Message from server</span>
+    </section>
+
+
+    <section class = "bg-secondary border mb-3">
+        <h5 class = "ml-4 text-white">Deposit Money </h5>
+        <form class = "m-1" action="#" >
+            <div class="form-group b-1 container">
+                <div class="row">
+                    <div class="col-4">
+                        <button type="button" class="btn btn-success" id="btnDepositAccount">Select Deposit Account</button>
+                        <input class="w-75 mt-1 form-control" type="text" name="putMoneyAccount"  placeholder="account" id = "depositAccount">
+                    </div>
+                    <div class="col-4">
+                        <button type="button" class="btn btn-success none" id="btnDepositSum">Deposit Sum</button>
+                            <input  class="w-75 mt-1 form-control" type="text" name="sumToPut" id = "depositSum">
+                    </div>
+                </div>
+            </div>
+            <button class = "btn btn-danger ml-3 mb-1" type="button" id = "onPutMoney">Deposit Money</button>
+        </form>
+        <span id="depositMessage" class = "text-white ml-4 ">Message from server</span>
+    </section>
+
+    <section class = "bg-secondary border mb-3">
+        <h5 class = "ml-4 text-white">Withdraw Money </h5>
+        <form class = "m-1" action="#" >
+            <div class="form-group b-1 container">
+                <div class="row">
+                    <div class="col-4">
+                        <button type="button" class="btn btn-success" id="btnWithdrawAccount">Select Withdraw Account</button>
+                        <input class="w-75 mt-1 form-control" type="text" name="getMoneyAccount"  placeholder="account" id = "withdrawAccount">
+                    </div>
+                    <div class="col-4">
+                        <button type="button" class="btn btn-success none" id="btnWithdrawSum">Withdraw  Sum</button>
+                        <input  class="w-75 mt-1 form-control" type="text" name="sumToGet" id = "withdrawSum">
+                    </div>
+                </div>
+            </div>
+            <button class = "btn btn-danger ml-3 mb-1" type="button" id = "onGetMoney">Withdraw Money</button>
+        </form>
+        <span id="withdrawMessage" class = "text-white ml-4 ">Message from server</span>
+    </section>
+
+    <section class = "bg-secondary border mb-3">
+        <h5 class = "ml-4 text-white">Add New Account</h5>
+        <form class = "m-1" action="#" >
+            <div class="form-group b-1 container">
+                <div class="row">
+                    <div class="col-12">
+                        <input class="w-75 mt-1 form-control" type="text" name="donorAccount" placeholder="owner name" id="newAccountOwner">
+                    </div>
+                </div>
+            </div>
+            <button class = "btn btn-danger ml-3 mb-1" type="button" id="onNewAccount" >Create New Account</button>
+        </form>
+        <span id="newAccountMessage" class = "text-white ml-4 ">Message from server</span>
+    </section>
+
+</div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
