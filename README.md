@@ -1,6 +1,7 @@
 # LightBankApplication 
 It is a test application which simulate transfer money from one account to another by REST API.
 Application consist of backend part developed by JAVA with light simple framework JAVALIN (https://javalin.io)
+Start application with pl.restServer.main.Server.class
 
 For test purpose use frontend part. It is simple JavaScript application, placed in /TestFrontEnd
 Frontend and backend part must be started on localhost. Backend use port 7070.
